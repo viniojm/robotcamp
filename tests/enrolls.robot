@@ -8,16 +8,19 @@ Resource    ../resources/base.resource
 *** Test Cases ***
 Must enroll a student
     ${admin}      Get Fixture    admin
-    ${student}    Get Fixture    student
+    ${falcao}    Get Fixture     falcao
 
-    Reset Student Enrolls    ${student}[email]
+    Reset Student     ${falcao}[student][email]
+
+    ${token}      Get Service Token    ${admin}
+    Create New Student    ${token}    ${falcao}[student]
 
     Do Login    ${admin}            
     
     Go To Enrolls
     Go To Enroll Form
-    Select Student    ${student}[name]
-    Select Plan       ${student}[enroll][plan]
+    Select Student    ${falcao}[student][name]
+    Select Plan       ${falcao}[enroll][plan]
     Fill Start Date    
     Submit Enroll Form
     Verify Toaster    Matrícula cadastrada com sucesso
