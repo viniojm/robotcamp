@@ -13,15 +13,6 @@ Create New Student
     ${response}     POST                http://localhost:3333/students
     ...                                 json=${student}
     ...                                 headers=${headers}
-    ...                                 expected_status=201    
-    
+    ...                                 expected_status=201  
+
     RETURN        ${response.json()}[id]
-
-Post Question
-    [Arguments]        ${student_id}        ${question}
-
-    ${payload}         Create Dictionary    question=${question}
-
-    POST               http://localhost:3333/students/${student_id}/help-orders
-    ...                json=${payload}
-    ...                expected_status=201

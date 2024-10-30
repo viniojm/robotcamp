@@ -19,7 +19,7 @@ Select Student Where Email
     ...                SELECT * FROM public.students WHERE email = '${email}';
         
     ${results}         Query        ${query}
-    RETURN             ${results}[0]
+    RETURN           ${results}[0]
 
 Delete Enroll By Email
     [Arguments]        ${email}

@@ -8,6 +8,7 @@ Resource    pages/enroll.resource
 Resource    database.resource
 Resource    services/students.resource
 Resource    services/sessions.resource
+Resource    components/notification.resource
 
 Library    JSONLibrary
 
@@ -28,4 +29,4 @@ Get Fixture
     ...            ${EXECDIR}/resources/fixtures/${fixture_file}.json
     ...            encoding=UTF-8
     
-    [Return]       ${fixture}
+    RETURN         ${fixture}

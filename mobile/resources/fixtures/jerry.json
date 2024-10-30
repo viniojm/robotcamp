@@ -1,0 +1,10 @@
+{
+    "student": {
+        "name": "Jerry Smith",
+        "email": "jerry@smartbit.com",
+        "age": "33",
+        "feet_tall": 1.74,
+        "weight": 71
+    },
+    "help": "Como faço para treinar de noite?"
+}

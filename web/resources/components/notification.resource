@@ -1,0 +1,19 @@
+*** Settings ***
+Documentation        Representation of the notification component
+
+Library    Browser
+
+*** Keywords ***
+Open Notification
+    Click                 xpath=(//aside//button)[1]
+
+Notification Should Be
+    [Arguments]        ${text}
+
+    ${element}         Set Variable        css=.scrollbar-container p
+
+    Wait For Elements State    ${element}
+    ...                        Visible
+    ...                        timeout=2s
+       
+    Get Text                   ${element}        equal    ${text}

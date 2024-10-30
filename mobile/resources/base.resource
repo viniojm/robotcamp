@@ -5,6 +5,15 @@ Library                  AppiumLibrary
 Library                  JSONLibrary
 
 Resource                 screens/login.resource
+Resource                 screens/components/popup.resource
+Resource                 screens/components/footer.resource
+Resource                 screens/help.resource
+
+Resource                 services/sessions.resource
+Resource                 services/students.resource
+Resource                 database.resource
+
+
 *** Keywords ***
 Start App
     Open Application	http://localhost:4723/wd/hub	
@@ -29,4 +38,4 @@ Get Fixture
     ...                ${EXECDIR}/resources/fixtures/${fixture_file}.json
     ...                encoding=UTF-8
    
-    [return]           ${fixture}  
+    RETURN           ${fixture}  
